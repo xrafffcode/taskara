@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { PiDatabase } from "react-icons/pi";
+import { cn } from '@/lib/utils';
+import { PiDatabase } from 'react-icons/pi';
 
 export default function EmptyState({ title, url, className }) {
     return (
@@ -7,13 +7,13 @@ export default function EmptyState({ title, url, className }) {
             href={url}
             className={cn(
                 'relative block w-full rounded-lg border-2 border-dashed border-muted-foreground p-12 text-center hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2',
-                className
+                className,
             )}
         >
-            <PiDatabase className="w-12 h-12 mx-auto text-muted-foreground" />
+            <PiDatabase className="mx-auto h-12 w-12 text-muted-foreground" />
             <span className="mt-2 block text-sm font-medium leading-relaxed tracking-tighter">
                 Create a new {title}
             </span>
         </Link>
-    )
+    );
 }
