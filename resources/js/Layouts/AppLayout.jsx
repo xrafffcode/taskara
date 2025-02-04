@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
 import { Dialog, Transition } from '@headlessui/react';
 import { Head, Link } from '@inertiajs/react';
 import { Fragment, useState } from 'react';
-import { PiSidebar, PiX } from 'react-icons/pi';
+import { PiDatabase, PiLockKey, PiLockKeyBold, PiPlus, PiSidebar, PiSquaresFour, PiUser, PiX } from 'react-icons/pi';
 
 export default function AppLayout({ children, title }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -73,7 +73,87 @@ export default function AppLayout({ children, title }) {
                                 Taskara<span className="text-red-500">.</span>
                             </Link>
                         </div>
-                        {/* Sidebar */}
+                        <nav className="flex flex-col flex-1">
+                            <ul role="list" className="flex flex-col flex-1 gap-y-7">
+                                <li>
+                                    <ul role="list" className="-mx-2 space-y-2">
+                                        {/* menu */}
+                                        <li>
+                                            <Link
+                                                href="#"
+                                                className="group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50 hover:text-foreground"
+                                            >
+                                                <PiSidebar className="h-6 w-6 flex-none" aria-hidden="true" />
+                                                Dashboard
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="#"
+                                                className="group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50 hover:text-foreground"
+                                            >
+                                                <PiUser className="h-6 w-6 flex-none" aria-hidden="true" />
+                                                People
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="#"
+                                                className="group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50 hover:text-foreground"
+                                            >
+                                                <PiSquaresFour className="h-6 w-6 flex-none" aria-hidden="true" />
+                                                My Tasks
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="#"
+                                                className="group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50 hover:text-foreground"
+                                            >
+                                                <PiLockKey className="h-6 w-6 flex-none" aria-hidden="true" />
+                                                Logout
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    {/* workspaces */}
+                                    <div className="flex items-center justify-between">
+                                        <div className="text-xs font-semibold leading-relaxed uppercase text-foreground">
+                                            Workspaces
+                                        </div>
+                                        <Link>
+                                            <PiPlus className="h-4 w-4 text-foreground hover:text-red-500" aria-hidden="true" />
+                                        </Link>
+                                    </div>
+                                    <ul role="list" className="mt-2 -mx-2 space-y-2">
+                                        <li>
+                                            <Link
+                                                href="#"
+                                                className="group flex items-center gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50 hover:text-foreground dark:text-white dark:hover:bg-gray-800 dark:hover:text-white"
+                                            >
+                                                <span className='bg-[#ffc107] text-white flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border font-medium leading-6 '>B</span>
+                                                <span className="truncate">Backend Developer</span>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="mt-auto -mx-6">
+                                    {/* profile */}
+                                    <div className="flex items-center gap-x-4 border-t border-gray-200 p-4 dark:border-gray-800 hover:bg-gray-50 hover:text-foreground cursor-pointer">
+                                        <Link href="#">
+                                            <span className="sr-only">Your profile</span>
+                                            <Avatar>
+                                                <AvatarFallback>X</AvatarFallback>
+                                            </Avatar>
+                                        </Link>
+                                        <div className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                                            <Link href="#">Tom Cook</Link>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
 
