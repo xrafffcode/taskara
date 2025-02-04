@@ -28,21 +28,20 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout title='Login'>
-            <div className="h-screen flex flex-col justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
+        <GuestLayout title="Login">
+            <div className="flex h-screen min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <Card>
                         <CardHeader>
                             <Link href="/" className="text-4xl font-black leading-relaxed tracking-tighter">
                                 Taskara<span className="text-red-500">.</span>
                             </Link>
-                            <h2 className="text-lg font-medium leading-relaxed tracking-tight text-left text-muted-foreground">
+                            <h2 className="text-left text-lg font-medium leading-relaxed tracking-tight text-muted-foreground">
                                 Sign in to your account
                             </h2>
                         </CardHeader>
                         <CardContent>
-
-                            <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+                            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                                 {status && <div className="mb-4 text-sm font-medium text-green-600">{status}</div>}
                                 <form className="space-y-6" onSubmit={submit}>
                                     {/* form */}
@@ -94,10 +93,7 @@ export default function Login({ status, canResetPassword }) {
                                                 checked={data.remember}
                                                 onChange={(e) => setData('remember', e.target.checked)}
                                             />
-                                            <label
-                                                htmlFor="remember_me"
-                                                className="ml-2 block text-sm text-gray-900"
-                                            >
+                                            <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-900">
                                                 Remember me
                                             </label>
                                         </div>
@@ -114,7 +110,7 @@ export default function Login({ status, canResetPassword }) {
                                     </div>
                                 </form>
 
-                                <p className="mt-10 text-sm text-center text-muted-foreground">
+                                <p className="mt-10 text-center text-sm text-muted-foreground">
                                     Not a member?{' '}
                                     <Link
                                         href={route('register')}
